@@ -1,38 +1,69 @@
-.App {
-  text-align: center;
-}
+/* grid container */
+.holy-grail-grid {
+  display: grid;
+  grid-template-areas:
+    "header"
+    "canvas-cont"
+    "left-sidebar"
+    "right-sidebar"
+    "footer";
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  grid-template-columns: 100%;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+  /* fallback height */
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  /* new small viewport height for modern browsers */
+  min-height: 100svh;
 }
 
-.App-link {
-  color: #61dafb;
+/* general column padding */
+.holy-grail-grid > * {
+  padding: 1rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* assign columns to grid areas */
+.holy-grail-grid > .header {
+  grid-area: header;
+  background: #f97171;
+}
+.holy-grail-grid > .canvas-cont {
+  grid-area: canvas-cont;
+  background: #fff;
+}
+.holy-grail-grid > .left-sidebar {
+  grid-area: left-sidebar;
+  background: #f5d55f;
+}
+.holy-grail-grid > .right-sidebar {
+  grid-area: right-sidebar;
+  background: #c5ed77;
+}
+.holy-grail-grid > .footer {
+  grid-area: footer;
+  background: #72c2f1;
+}
+
+/* tablet breakpoint */
+@media (min-width: 768px) {
+  .holy-grail-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "header header"
+      "canvas-cont canvas-cont"
+      "left-sidebar right-sidebar"
+      "footer footer";
   }
-  to {
-    transform: rotate(360deg);
+}
+
+/* desktop breakpoint */
+@media (min-width: 1024px) {
+  .holy-grail-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+      "header header header header"
+      "left-sidebar canvas-cont canvas-cont right-sidebar"
+      "footer footer footer footer";
   }
 }
