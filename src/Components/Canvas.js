@@ -5,6 +5,7 @@ import { useEffect } from "react";
 export default function Canvas() {
   useEffect(() => {
     const canvas = document.getElementById("canvas-cont");
+
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
@@ -20,8 +21,12 @@ export default function Canvas() {
 
     var colorArray = ["#1A4F63", "#068587", "#6FB07F", "#FCB03C", "#FC5B3F"];
     function handleMouseMove(event) {
-      mouse.x = event.x;
-      mouse.y = event.y;
+      // Get the bounding rectangle of the canvas
+      const canvasRect = canvas.getBoundingClientRect();
+
+      // Calculate the mouse position relative to the canvas
+      mouse.x = event.clientX - canvasRect.left;
+      mouse.y = event.clientY - canvasRect.top;
     }
 
     function handleResize() {

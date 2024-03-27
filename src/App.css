@@ -2,14 +2,15 @@
 .holy-grail-grid {
   display: grid;
   grid-template-areas:
-    "header"
-    "canvas-cont"
-    "left-sidebar"
-    "right-sidebar"
-    "footer";
+    "header header header header"
+    "left-sidebar canvas-cont canvas-cont right-sidebar"
+    "footer footer footer footer";
   display: grid;
   grid-template-rows: auto 1fr auto;
-  grid-template-columns: 100%;
+  grid-template-columns: repeat(
+    4,
+    1fr
+  ); /* 4 columns for header, left sidebar, canvas, right sidebar, footer */
 
   /* fallback height */
   min-height: 100vh;
@@ -22,6 +23,9 @@
 .holy-grail-grid > * {
   padding: 1rem;
 }
+.canvas-cont {
+  width: 100%;
+}
 
 /* assign columns to grid areas */
 .holy-grail-grid > .header {
@@ -30,7 +34,7 @@
 }
 .holy-grail-grid > .canvas-cont {
   grid-area: canvas-cont;
-  background: #fff;
+  background: #fff; /* This is the canvas container background */
 }
 .holy-grail-grid > .left-sidebar {
   grid-area: left-sidebar;
@@ -43,27 +47,4 @@
 .holy-grail-grid > .footer {
   grid-area: footer;
   background: #72c2f1;
-}
-
-/* tablet breakpoint */
-@media (min-width: 768px) {
-  .holy-grail-grid {
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas:
-      "header header"
-      "canvas-cont canvas-cont"
-      "left-sidebar right-sidebar"
-      "footer footer";
-  }
-}
-
-/* desktop breakpoint */
-@media (min-width: 1024px) {
-  .holy-grail-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas:
-      "header header header header"
-      "left-sidebar canvas-cont canvas-cont right-sidebar"
-      "footer footer footer footer";
-  }
 }
