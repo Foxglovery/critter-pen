@@ -39,6 +39,7 @@ export default function Canvas() {
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", handleResize);
 
+    // RULES FOR EACH CIRCLE
     function Circle(x, y, dx, dy, radius) {
       this.x = x;
       this.y = y;
@@ -47,6 +48,7 @@ export default function Canvas() {
       this.radius = radius;
       this.minRadius = radius;
       this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+      // SPECIFY DRAW DIRECTIONS HERE
       this.draw = function () {
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
