@@ -1,3 +1,20 @@
+:root {
+  --text-color: rgb(28, 22, 22);
+}
 .stat-container {
-  color: red;
+  color: var(--text-color);
+}
+
+.stat-el {
+  color: rgb(60, 37, 37);
+  border: 2px solid black;
+  padding: 1rem;
+}
+
+.stat-el button {
+  border: none;
+  background-image: url("../../assets/stat-ink-stroke.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
