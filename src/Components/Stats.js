@@ -1,3 +1,5 @@
+import React from "react";
+import styles from "./Styles/Stats.module.css";
 export default function Stats() {
-  return <stat-container>this is text</stat-container>;
+  return <div className={styles["stat-container"]}>this is text</div>;
 }

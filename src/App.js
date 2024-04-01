@@ -12,6 +12,7 @@ function App() {
       <section className="left-sidebar">
         <Stats />
       </section>
+      <stat-container>this is also text</stat-container>
       <aside className="right-sidebar">Right sidebar</aside>
       <footer className="footer">Footer</footer>
     </div>
