@@ -1,12 +1,17 @@
 import "./App.css";
 import Canvas from "./Components/Canvas";
+import Stats from "./Components/Stats";
 
 function App() {
   return (
     <div className="holy-grail-grid">
       <header className="header">Header</header>
-      <Canvas />
-      <section className="left-sidebar">Left sidebar</section>
+      <div className="canvas-cont">
+        <Canvas />
+      </div>
+      <section className="left-sidebar">
+        <Stats />
+      </section>
       <aside className="right-sidebar">Right sidebar</aside>
       <footer className="footer">Footer</footer>
     </div>

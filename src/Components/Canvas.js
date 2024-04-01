@@ -20,14 +20,15 @@ export default function Canvas() {
 
     var colorArray = ["#1A4F63", "#068587", "#6FB07F", "#FCB03C", "#FC5B3F"];
     // EVENT HANDLERS
+    const canvasContainerRect = document
+      .querySelector(".canvas-cont")
+      .getBoundingClientRect();
     function handleMouseMove(event) {
       // Get the bounding rectangle of the canvas
-      const canvasRect = canvas.getBoundingClientRect();
 
       // Calculate the mouse position relative to the canvas
-      mouse.x = event.clientX - canvasRect.left;
-      mouse.y = event.clientY - canvasRect.top;
-      console.log(event);
+      mouse.x = event.clientX;
+      mouse.y = event.clientY;
     }
 
     function handleResize() {
@@ -36,7 +37,7 @@ export default function Canvas() {
       init();
     }
 
-    window.addEventListener("mousemove", handleMouseMove);
+    // window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", handleResize);
 
     // RULES FOR EACH CIRCLE
