@@ -9,12 +9,9 @@
   color: rgb(60, 37, 37);
   border: 2px solid black;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-el button {
-  border: none;
-  background-image: url("../../assets/stat-ink-stroke.svg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
 }
