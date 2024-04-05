@@ -9,7 +9,7 @@ export default function Canvas() {
     canvas.height = window.innerHeight;
 
     var ctx = canvas.getContext("2d");
-    //declare mouse so it can be referenced and changed later on
+    //declare mouse so it can be referenced and changed later on this can be removed
     var mouse = {
       x: undefined,
       y: undefined,

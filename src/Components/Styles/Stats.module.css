@@ -3,6 +3,8 @@
 }
 .stat-container {
   color: var(--text-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .stat-el {
@@ -11,7 +13,9 @@
   padding: 1rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .stat-el button {
+  width: 50%;
 }
