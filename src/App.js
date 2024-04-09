@@ -6,7 +6,7 @@ import Stats from "./Components/Stats";
 function App() {
   return (
     <div className="holy-grail-grid">
-      <header className="header">Header</header>
+      <header className="header">This will be the navbar</header>
       <div className="canvas-cont">
         <Canvas />
       </div>
