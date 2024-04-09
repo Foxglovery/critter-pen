@@ -1,5 +1,6 @@
 import "./App.css";
 import Canvas from "./Components/Canvas";
+import Reminders from "./Components/Reminders";
 import Stats from "./Components/Stats";
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
       {/* these can be removed */}
       <stat-el>this is also tezt</stat-el>
       <stat-container>this is also text</stat-container>
-      <aside className="right-sidebar">Right sidebar</aside>
+      <aside className="right-sidebar">
+        <Reminders />
+      </aside>
       <footer className="footer">Footer</footer>
     </div>
   );
