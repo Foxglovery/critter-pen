@@ -10,8 +10,8 @@ export default function Reminders() {
     <main>
       <section>
         <ul>
-          {reminders.map((r) => (
-            <li>{r}</li>
+          {reminders.map((r, index) => (
+            <li key={index}>{r}</li>
           ))}
         </ul>
       </section>
