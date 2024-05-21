@@ -11,7 +11,8 @@ export default function Stats() {
         const response = await await axios.get(
           `https://perenual.com/api/species-list?key=sk-GA44664cc210e8e325592`
         );
-        setData(response.data);
+        console.log("response from API", response.data);
+        setData(response.data.data);
       } catch (error) {
         console.log("Error fetching data", error);
       }
@@ -27,6 +28,16 @@ export default function Stats() {
         <button>Add Free Money</button>
       </section>
       <h2>Available Plants</h2>
+      {Array.isArray(data) && data.length > 0 ? (
+        data.map((p, index) => (
+          <div key={index}>
+            <p>{p.common_name}</p>
+            <img src={p.default_image?.small_url} alt={p.common_name} />
+          </div>
+        ))
+      ) : (
+        <p>No data available</p>
+      )}
     </main>
   );
 }
