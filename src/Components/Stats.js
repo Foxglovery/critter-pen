@@ -32,7 +32,7 @@ export default function Stats() {
         data.map((p, index) => (
           <div key={index}>
             <p>{p.common_name}</p>
-            <img src={p.default_image?.small_url} alt={p.common_name} />
+            <img src={p.default_image?.thumbnail} alt={p.common_name} />
           </div>
         ))
       ) : (

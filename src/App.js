@@ -14,8 +14,7 @@ function App() {
         <Stats />
       </section>
       {/* these can be removed */}
-      <stat-el>this is also text</stat-el>
-      <stat-container>this is also text</stat-container>
+
       <aside className="right-sidebar">
         <Reminders />
       </aside>
