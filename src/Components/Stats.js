@@ -9,10 +9,17 @@ export default function Stats() {
     async function fetchData() {
       try {
         const response = await await axios.get(
-          `https://perenual.com/api/species-list?key=sk-GA44664cc210e8e325592`
+          `https://perenual.com/api/species-list?key=sk-GA44664cc210e8e325592&hardiness=7&page=2`
         );
         console.log("response from API", response.data);
-        setData(response.data.data);
+        const plantsWithImg = response.data.data.filter(
+          (p) =>
+            p.default_image &&
+            p.default_image.original_url !==
+              "https://perenual.com/storage/image/upgrade_access.jpg"
+        );
+        console.log("plants with images", plantsWithImg);
+        setData(plantsWithImg);
       } catch (error) {
         console.log("Error fetching data", error);
       }
