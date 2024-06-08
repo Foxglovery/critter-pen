@@ -3,7 +3,7 @@ import styles from "./Styles/Stats.module.css";
 import axios from "axios";
 export default function Stats() {
   const [funds, setFunds] = useState(4);
-  const [data, setData] = useState(null);
+  // const [data, setData] = useState(null);
 
   // useEffect(() => {
   //   async function fetchData() {

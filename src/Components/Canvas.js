@@ -49,6 +49,7 @@ export default function Canvas() {
       this.radius = radius;
       this.minRadius = radius;
       this.color = colorArray[Math.floor(Math.random() * colorArray.length)];
+
       // SPECIFY DRAW DIRECTIONS HERE
       this.draw = function () {
         ctx.beginPath();
