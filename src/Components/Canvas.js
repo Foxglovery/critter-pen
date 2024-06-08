@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 
-export default function Canvas() {
+export default function Canvas({ plantData = [] }) {
   useEffect(() => {
     const canvas = document.getElementById("canvas-cont");
     canvas.width = window.innerWidth;
@@ -19,6 +19,7 @@ export default function Canvas() {
     // var minRadius = 2;
 
     var colorArray = ["#1A4F63", "#068587", "#6FB07F", "#FCB03C", "#FC5B3F"];
+    // var plantImgArray = plantData.map((p) => p.default_image.thumbnail);
     // EVENT HANDLERS
     const canvasContainerRect = document
       .querySelector(".canvas-cont")
