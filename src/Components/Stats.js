@@ -3,48 +3,28 @@ import styles from "./Styles/Stats.module.css";
 import axios from "axios";
 export default function Stats() {
   const [funds, setFunds] = useState(4);
-  // const [data, setData] = useState(null);
+  const [cursors, setCursors] = useState(0);
+  const [cursorCost, setCursorCost] = useState(10);
+  const handleClick = (number) => {
+    setFunds(funds + number);
+  };
 
-  // useEffect(() => {
-  //   async function fetchData() {
-  //     try {
-  //       const response = await await axios.get(
-  //         `https://perenual.com/api/species-list?key=sk-GA44664cc210e8e325592&hardiness=7&page=1`
-  //       );
-  //       console.log("response from API", response.data);
-  //       const plantsWithImg = response.data.data.filter(
-  //         (p) =>
-  //           p.default_image &&
-  //           p.default_image.original_url !==
-  //             "https://perenual.com/storage/image/upgrade_access.jpg"
-  //       );
-  //       console.log("plants with images", plantsWithImg);
-  //       setData(plantsWithImg);
-  //     } catch (error) {
-  //       console.log("Error fetching data", error);
-  //     }
-  //   }
-
-  //   fetchData();
-  // }, []);
-
+  function buyCursor() {
+    var cursorCost = Math.floor(10 * Math.pow(1.1, cursors));
+    if (funds >= cursorCost) {
+      setCursors(cursors + 1);
+      setFunds(funds - cursorCost);
+    }
+  }
+  window.setInterval(function () {}, 1000);
   return (
     <main className={styles["stat-container"]}>
       <section className={styles["stat-el"]}>
         Funds: ${funds}
-        <button>Add Free Money</button>
+        <button onClick={handleClick}>Add Free Money</button>
+        <span id="cursors">{cursors}</span>
+        <span id="cursorCost">{cursorCost}</span>
       </section>
-      <h2>Available Plants</h2>
-      {/* {Array.isArray(data) && data.length > 0 ? (
-        data.map((p, index) => (
-          <div key={index}>
-            <p>{p.common_name}</p>
-            <img src={p.default_image?.thumbnail} alt={p.common_name} />
-          </div>
-        ))
-      ) : (
-        <p>No data available</p>
-      )} */}
     </main>
   );
 }

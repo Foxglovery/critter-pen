@@ -33,9 +33,7 @@ function App() {
   return (
     <div className="holy-grail-grid">
       <header className="header">This will be the navbar</header>
-      <div className="canvas-cont">
-        <Canvas plantData={data} />
-      </div>
+      <div className="canvas-cont">{/* <Canvas plantData={data} /> */}</div>
       <section className="left-sidebar">
         <Stats />
       </section>
