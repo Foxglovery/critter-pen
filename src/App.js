@@ -3,37 +3,27 @@ import "./App.css";
 import Canvas from "./Components/Canvas";
 import Reminders from "./Components/Reminders";
 import Stats from "./Components/Stats";
-import axios from "axios";
+import Wordle from "./Components/Wordle/Wordle";
 
 function App() {
-  const [data, setData] = useState(null);
+  const [solution, setSolution] = useState(null);
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await await axios.get(
-          `https://perenual.com/api/species-list?key=sk-GA44664cc210e8e325592&hardiness=7&page=1`
-        );
-        console.log("response from API", response.data);
-        const plantsWithImg = response.data.data.filter(
-          (p) =>
-            p.default_image &&
-            p.default_image.original_url !==
-              "https://perenual.com/storage/image/upgrade_access.jpg"
-        );
-        console.log("plants with images", plantsWithImg);
-        setData(plantsWithImg);
-      } catch (error) {
-        console.log("Error fetching data", error);
-      }
-    }
-
-    fetchData();
-  }, []);
+    fetch("http://localhost:3000/solutions")
+      .then((res) => res.json())
+      .then((json) => {
+        let randomSolution = json[Math.floor(Math.random() * json.length)];
+        setSolution(randomSolution.word);
+      });
+  }, [setSolution]);
 
   return (
     <div className="holy-grail-grid">
       <header className="header">This will be the navbar</header>
-      <div className="canvas-cont">{/* <Canvas plantData={data} /> */}</div>
+      <div className="wordle-cont">
+        <h1>Wordle (Lingo)</h1>
+
+        {solution && <Wordle solution={solution} />}
+      </div>
       <section className="left-sidebar">
         <Stats />
       </section>

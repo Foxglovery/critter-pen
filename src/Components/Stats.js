@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import styles from "./Styles/Stats.module.css";
-import axios from "axios";
+
 export default function Stats() {
   const [funds, setFunds] = useState(4);
   const [cursors, setCursors] = useState(0);
