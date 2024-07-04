@@ -7,13 +7,15 @@ import Wordle from "./Components/Wordle/Wordle";
 
 function App() {
   const [solution, setSolution] = useState(null);
-  const [solvedSolutions, setSolvedSolutions] = useState();
+  const [solvedSolutions, setSolvedSolutions] = useState("");
+  const [wholeSolution, setWholeSolution] = useState("");
   useEffect(() => {
     fetch("http://localhost:3000/solutions")
       .then((res) => res.json())
       .then((json) => {
         let randomSolution = json[Math.floor(Math.random() * json.length)];
         setSolution(randomSolution.word);
+        setWholeSolution(randomSolution);
       });
   }, [setSolution]);
 
@@ -23,7 +25,14 @@ function App() {
       <div className="wordle-cont">
         <h1>Wordle (Lingo)</h1>
 
-        {solution && <Wordle solution={solution} />}
+        {solution && (
+          <Wordle
+            solution={solution}
+            wholeSolution={wholeSolution}
+            solvedSolutions={solvedSolutions}
+            setSolvedSolutions={setSolvedSolutions}
+          />
+        )}
       </div>
       <section className="left-sidebar">
         <Stats />

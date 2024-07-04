@@ -4,7 +4,12 @@ import Grid from "./Grid";
 import { Keypad } from "./Keypad";
 import Modal from "./Modal";
 
-export default function Wordle({ solution }) {
+export default function Wordle({
+  solution,
+  wholeSolution,
+  solvedSolutions,
+  setSolvedSolutions,
+}) {
   const { currentGuess, handleKeyup, guesses, isCorrect, turn, usedKeys } =
     useWordle(solution);
   const [showModal, setShowModal] = useState(false);
@@ -14,6 +19,7 @@ export default function Wordle({ solution }) {
 
     if (isCorrect) {
       setTimeout(() => setShowModal(true), 2000);
+
       window.removeEventListener("keyup", handleKeyup);
     }
 

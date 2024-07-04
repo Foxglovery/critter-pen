@@ -29,20 +29,20 @@
   ],
 
   "solutions": [
-    { "id": 1, "word": "ninja" },
-    { "id": 2, "word": "spade" },
-    { "id": 3, "word": "pools" },
-    { "id": 4, "word": "drive" },
-    { "id": 5, "word": "relax" },
-    { "id": 6, "word": "times" },
-    { "id": 7, "word": "train" },
-    { "id": 8, "word": "cores" },
-    { "id": 9, "word": "pours" },
-    { "id": 10, "word": "blame" },
-    { "id": 11, "word": "banks" },
-    { "id": 12, "word": "phone" },
-    { "id": 13, "word": "bling" },
-    { "id": 14, "word": "coins" },
-    { "id": 15, "word": "hello" }
+    { "id": 1, "word": "ninja", "pos": ["n"] },
+    { "id": 2, "word": "spade", "pos": ["n"] },
+    { "id": 3, "word": "pools", "pos": ["n"] },
+    { "id": 4, "word": "drive", "pos": ["n"] },
+    { "id": 5, "word": "relax", "pos": ["v"] },
+    { "id": 6, "word": "times", "pos": ["n"] },
+    { "id": 7, "word": "train", "pos": ["n"] },
+    { "id": 8, "word": "cores", "pos": ["n"] },
+    { "id": 9, "word": "pours", "pos": ["n"] },
+    { "id": 10, "word": "blame", "pos": ["n"] },
+    { "id": 11, "word": "banks", "pos": ["n"] },
+    { "id": 12, "word": "phone", "pos": ["n"] },
+    { "id": 13, "word": "bling", "pos": ["n"] },
+    { "id": 14, "word": "coins", "pos": ["n"] },
+    { "id": 15, "word": "hello", "pos": ["n"] }
   ]
 }
