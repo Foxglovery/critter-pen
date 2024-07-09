@@ -14,6 +14,7 @@ export default function Wordle({
     useWordle(solution);
   const [showModal, setShowModal] = useState(false);
 
+  // I think the change in refreshing needs to occur here
   useEffect(() => {
     window.addEventListener("keyup", handleKeyup);
 
@@ -37,7 +38,7 @@ export default function Wordle({
       <div>Current Guess - {currentGuess}</div>
       <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
       <Keypad usedKeys={usedKeys} />
-
+      {/* will need to undo modal display and allow game to reset without page refresh */}
       {showModal && (
         <Modal isCorrect={isCorrect} turn={turn} solution={solution} />
       )}
