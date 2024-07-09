@@ -19,6 +19,16 @@ function App() {
       });
   }, [setSolution]);
 
+  const fetchNewSolution = () => {
+    fetch("http://localhost:3000/solutions")
+      .then((res) => res.json())
+      .then((json) => {
+        let randomSolution = json[Math.floor(Math.random() * json.length)];
+        setSolution(randomSolution.word);
+        setWholeSolution(randomSolution);
+      });
+  };
+
   return (
     <div className="holy-grail-grid">
       <header className="header">This will be the navbar</header>
@@ -31,6 +41,7 @@ function App() {
             wholeSolution={wholeSolution}
             solvedSolutions={solvedSolutions}
             setSolvedSolutions={setSolvedSolutions}
+            fetchNewSolution={fetchNewSolution}
           />
         )}
       </div>

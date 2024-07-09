@@ -126,7 +126,15 @@ const useWordle = (solution) => {
   };
 
   // you can just return state like this and components can import and retrieve
-  return { turn, currentGuess, guesses, isCorrect, usedKeys, handleKeyup };
+  return {
+    turn,
+    currentGuess,
+    guesses,
+    isCorrect,
+    usedKeys,
+    handleKeyup,
+    setIsCorrect,
+  };
 };
 
 export default useWordle;
