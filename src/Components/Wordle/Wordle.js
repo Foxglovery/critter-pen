@@ -59,6 +59,7 @@ export default function Wordle({
 
   return (
     <div>
+      {/* all of this is to be removed TODO */}
       <div> solution - {solution}</div>
       <div>Current Guess - {currentGuess}</div>
       <Grid currentGuess={currentGuess} guesses={guesses} turn={turn} />
